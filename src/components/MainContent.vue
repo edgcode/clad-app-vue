@@ -2,7 +2,7 @@
  <v-container fluid  grid-list-xl>
     <v-layout row wrap align-center>
      
-          <v-flex xs12 sm6
+          <v-flex xs6 sm4
             
                 v-for="(article, i) in articles" 
                 :key="i"
@@ -15,21 +15,21 @@
                   v-bind:src="article.urlToImage"
                 ></v-img> -->
                 <div>
-                  <iframe width="100%" height="388" src="https://www.youtube.com/embed/0DrLCY2-fQA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="100%" height="200" src="https://www.youtube.com/embed/0DrLCY2-fQA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>
                   <v-container fill-height fluid>
                     <v-layout>
                       <v-flex xs12 align-end d-flex>
-                        <span class="headline">{{ article.title }}</span>
+                        <span class="headline">{{ article.snippet.title }}</span>
                         <h2><span >{{ article.videoTitle }}</span></h2>
                       </v-flex>
                     </v-layout>
                   </v-container>
                
                 <v-card-text>
-                  {{ article.description }}
+                  {{ article.snippet.description }}
                 </v-card-text>
-                <TimeLine  :timelineId="i" :dates="article.dates" :times="article.times"/>
+                <TimeLine  :timelineId="i" :videoTitle = "article.snippet.title" :dates="article.dates" :times="article.times"/>
                 <v-card-actions>
                   <v-chip small color="secondary" class="white--text">
                     <!-- {{article.source.name}} Source Name -->
@@ -65,6 +65,9 @@
 
 <script>
 import TimeLine from './TimeLine.vue'
+
+
+
 
 export default {
   props: {

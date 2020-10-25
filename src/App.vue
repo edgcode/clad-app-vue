@@ -27,7 +27,7 @@
 
     <v-main>
       <!-- <HelloWorld/> -->
-       <MainContent :articles="articles"></MainContent> 
+       <MainContent :articles="videodata.items" ></MainContent> 
       <Calendar/>
     </v-main>
   </v-app>
@@ -39,6 +39,8 @@
 import MainContent from './components/MainContent.vue' // import the Main Content component
 import SideBar from './components/SideBar.vue' // import the SideMenu component
 import Calendar from './components/Calendar.vue'
+
+const videodata = require('./components/videodata.js')
 
 export default {
 
@@ -52,6 +54,7 @@ export default {
     return {
       drawer: false, // false = Vuetify automatically "do the right thing" to show/hide the drawer
       api_key:'4efdcffd8da34562a15fdcde13de091a', // Your API Key go here
+      videodata: videodata.playlistData,
       articles: [
 
         {
@@ -119,6 +122,14 @@ export default {
       errors: [] 
     }
   },
+  mounted(){
+    // this.parseVideoTitle()
+  },
+  methods: {
+    
+
+    
+  }
   // created () {
   //   axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey='+this.api_key)
   //     .then(response => {

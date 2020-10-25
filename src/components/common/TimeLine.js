@@ -746,13 +746,14 @@ let originTime
         //   {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
         // ];
         var width = 500;
-        var height = 200;
+        var height = 50;
   
         function timelineRectOld(container) {
          var chart = d3.timeline();
           var svg = d3.select("#"+container).append("svg")
             .attr("width", width)
             .attr("height", height)
+            
             .datum(testData).call(chart);
        // alert('timeline')
         }
@@ -760,8 +761,9 @@ let originTime
         function timelineRect(container, dates, times) {
            
              const svg = d3.select("#"+container).append("svg")
-               .attr("width", width)
-               .attr("height", height)
+            //    .attr("width", width)
+            //    .attr("height", height)
+               .attr("viewBox", `0 0 500 200`)
 
            
 
