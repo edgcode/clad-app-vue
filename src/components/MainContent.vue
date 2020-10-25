@@ -26,6 +26,7 @@
                 <v-card-text>
                   {{ article.description }}
                 </v-card-text>
+                <TimeLine  :timelineId="i"/>
                 <v-card-actions>
                   <v-chip small color="secondary" class="white--text">
                     <!-- {{article.source.name}} Source Name -->
@@ -58,9 +59,14 @@
 </template>
 
 <script>
+import TimeLine from './TimeLine.vue'
+
 export default {
   props: {
       articles: Array
+  },
+  components: {
+       TimeLine
   },
 }
 </script>
