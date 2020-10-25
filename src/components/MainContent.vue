@@ -14,7 +14,7 @@
                   v-bind:src="article.urlToImage"
                 ></v-img> -->
                 <div>
-                  <iframe width="100%" height="588" src="https://www.youtube.com/embed/0DrLCY2-fQA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="100%" height="388" src="https://www.youtube.com/embed/0DrLCY2-fQA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>
                   <v-container fill-height fluid>
                     <v-layout>
@@ -29,7 +29,8 @@
                 </v-card-text>
                 <v-card-actions>
                   <v-chip small color="secondary" class="white--text">
-                    {{article.source.name}}
+                    <!-- {{article.source.name}} Source Name -->
+                    Name
                   </v-chip>
                   <v-spacer></v-spacer>
                   <v-btn icon class="red--text">
@@ -49,7 +50,7 @@
                   </v-btn>
                   <v-spacer></v-spacer>
 
-         <v-btn small replace color="info" v-bind:href="article.url" target="_blank" >Read More</v-btn>
+         <v-btn small replace color="info" href="#" target="_blank" >Read More</v-btn>
                 </v-card-actions>
               </v-card>
             </v-col>

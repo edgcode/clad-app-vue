@@ -35,7 +35,7 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld';
-import axios from 'axios' // importing the axios (a HTTP library) to connects the app with the News API
+// import axios from 'axios' // importing the axios (a HTTP library) to connects the app with the News API
 import MainContent from './components/MainContent.vue' // import the Main Content component
 import SideBar from './components/SideBar.vue' // import the SideMenu component
 import Calendar from './components/Calendar.vue'
@@ -52,21 +52,43 @@ export default {
     return {
       drawer: false, // false = Vuetify automatically "do the right thing" to show/hide the drawer
       api_key:'4efdcffd8da34562a15fdcde13de091a', // Your API Key go here
-      articles: [],
+      articles: [
+
+        {
+          title: "07/09/2020 - No Patrols all night",
+          description: "Another night of no patrols",
+
+        },
+        {
+          title: "07/09/2020 - No Patrols all night",
+          description: "Another night of no patrols",
+
+        },
+        {
+          title: "07/09/2020 - No Patrols all night",
+          description: "Another night of no patrols",
+
+        },
+        {
+          title: "07/09/2020 - No Patrols all night",
+          description: "Another night of no patrols",
+
+        },
+      ],
       errors: [] 
     }
   },
-  created () {
-    axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey='+this.api_key)
-      .then(response => {
-        //this.articles = response.data.articles
-        this.articles = response.data.articles
-        console.log('data:')
-        console.log(response.data.articles) // This will give you access to the full object
-      })
-      .catch(e => {
-        this.errors.push(e)
-      })
-  },
+  // created () {
+  //   axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey='+this.api_key)
+  //     .then(response => {
+  //       //this.articles = response.data.articles
+  //       this.articles = response.data.articles
+  //       console.log('data:')
+  //       console.log(response.data.articles) // This will give you access to the full object
+  //     })
+  //     .catch(e => {
+  //       this.errors.push(e)
+  //     })
+  // },
 }
 </script>
