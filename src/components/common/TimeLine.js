@@ -757,32 +757,43 @@ let originTime
        // alert('timeline')
         }
 
-        function timelineRect(container) {
+        function timelineRect(container, dates, times) {
            
              const svg = d3.select("#"+container).append("svg")
                .attr("width", width)
                .attr("height", height)
 
-            svg
-                .append("line")
-                .attr("x1", 10)
-                .attr("x2", 100)
-                .attr("y1", 10)
-                .attr("y2", 10)
-                .attr("stroke", "orange")
-                .attr("stroke-width", 20)
+           
 
             // Define your time scale
-                var x = d3.scaleTime()
-                .domain([new Date, new Date])
+                var x = d3.scaleTime().range([0, width ]);
+
+                let startDay = dates.start
+               let endDay = dates.end
+                
+                x.domain([startDay , endDay ])
                 .nice(d3.timeDay)
-                .range([0, width ]);
+                
 
                 // Add your axis
                 svg.append("g")
                 .attr("transform", "translate(5,25)")
                 .call(d3.axisBottom().scale(x).ticks(24).tickFormat(d3.timeFormat("%H")));
+               
+
               
+
+               let startTime = times.start
+               let endTime = times.end
+
+                svg
+                .append("line")
+                .attr("x1", x(startTime))
+                .attr("x2", x(endTime ))
+                .attr("y1", 10)
+                .attr("y2", 10)
+                .attr("stroke", "orange")
+                .attr("stroke-width", 20)
           // alert('timeline')
            }
         

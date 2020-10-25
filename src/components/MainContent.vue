@@ -21,6 +21,7 @@
                     <v-layout>
                       <v-flex xs12 align-end d-flex>
                         <span class="headline">{{ article.title }}</span>
+                        <h2><span >{{ article.videoTitle }}</span></h2>
                       </v-flex>
                     </v-layout>
                   </v-container>
@@ -28,7 +29,7 @@
                 <v-card-text>
                   {{ article.description }}
                 </v-card-text>
-                <TimeLine  :timelineId="i"/>
+                <TimeLine  :timelineId="i" :dates="article.dates" :times="article.times"/>
                 <v-card-actions>
                   <v-chip small color="secondary" class="white--text">
                     <!-- {{article.source.name}} Source Name -->

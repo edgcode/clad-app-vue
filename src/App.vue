@@ -57,22 +57,62 @@ export default {
         {
           title: "07/09/2020 - No Patrols all night",
           description: "Another night of no patrols",
+          videoTitle: "output 31 07 2020 1445 to 01 08 2020 0037",
+          videoId: "0DrLCY2-fQA",
+          dates : {
+               start: new Date(2020, 7, 31, 12,0),
+               end: new Date(2020, 8, 1, 12,0)
+           } ,
+           times : {
+               start: new Date(2020, 7, 31, 14,45),
+               end: new Date(2020, 8, 1, 0,37)
+           } 
           
 
         },
         {
           title: "07/09/2020 - No Patrols all night",
           description: "Another night of no patrols",
+          videoTitle: "output 31 07 2020 1445 to 01 08 2020 0037",
+          videoId: "0DrLCY2-fQA",
+          dates : {
+               start: new Date(2020, 10, 25, 0,0),
+               end: new Date(2020, 10, 25, 23,59)
+           } ,
+           times : {
+               start: new Date(2020, 10, 25, 7,0),
+               end: new Date(2020, 10, 25, 11,59)
+           } 
 
         },
         {
           title: "07/09/2020 - No Patrols all night",
           description: "Another night of no patrols",
+          videoTitle: "output 31 07 2020 1445 to 01 08 2020 0037",
+          videoId: "0DrLCY2-fQA",
+          dates : {
+               start: new Date(2020, 7, 31, 14,45),
+               end: new Date(2020, 8, 1, 0,37)
+           } ,
+           times : {
+               start: new Date(2020, 10, 25, 7,0),
+               end: new Date(2020, 10, 25, 14,59)
+           } 
 
         },
         {
           title: "07/09/2020 - No Patrols all night",
           description: "Another night of no patrols",
+          videoTitle: "output 31 07 2020 1445 to 01 08 2020 0037",
+          videoId: "0DrLCY2-fQA",
+          dates : {
+               start: new Date(2020, 10, 25, 0,0),
+               end: new Date(2020, 10, 25, 23,59)
+           } ,
+           times : {
+               start: new Date(2020, 10, 25, 7,0),
+               end: new Date(2020, 10, 25, 17,59)
+           } 
 
         },
       ],

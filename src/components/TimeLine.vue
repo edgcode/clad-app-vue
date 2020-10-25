@@ -11,7 +11,9 @@ const timeline = require('./common/TimeLine')
 
 export default {
     props: [
-        "timelineId"
+        "timelineId",
+        "dates",
+        "times"
     ],
    
     data: function(){
@@ -30,8 +32,10 @@ export default {
 
     methods:{
         drawTimeLine: function(id){
-           timeline.timelineRect(id)
-            // alert('drawing timeline' + id)
+
+         
+           timeline.timelineRect(id, this.dates, this.times)
+           
             return
         }
     }
