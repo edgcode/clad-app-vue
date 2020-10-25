@@ -57,6 +57,7 @@ export default {
         {
           title: "07/09/2020 - No Patrols all night",
           description: "Another night of no patrols",
+          
 
         },
         {

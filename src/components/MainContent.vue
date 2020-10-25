@@ -1,12 +1,11 @@
 <template>
     <v-layout row wrap align-center>
-          <v-flex xs8  offset-md2>
-            <v-col 
-                v-for="article in articles" 
-                :key="article.title"
+          <v-flex xs12 sm6
+            
+                v-for="(article, i) in articles" 
+                :key="i"
 
-                cols="12"
-                sm="12"
+                
               >
               <v-card class="my-3" hover>
                 <!-- <v-img
@@ -53,7 +52,7 @@
          <v-btn small replace color="info" href="#" target="_blank" >Read More</v-btn>
                 </v-card-actions>
               </v-card>
-            </v-col>
+            
           </v-flex>
         </v-layout>
 </template>
