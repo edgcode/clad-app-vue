@@ -763,7 +763,7 @@ let originTime
              const svg = d3.select("#"+container).append("svg")
             //    .attr("width", width)
             //    .attr("height", height)
-               .attr("viewBox", `0 0 500 200`)
+               .attr("viewBox", `0 0 500 100`)
 
            
 
@@ -776,26 +776,82 @@ let originTime
                 x.domain([startDay , endDay ])
                 .nice(d3.timeDay)
                 
+                const xAxis = d3.axisBottom()
+                    .scale(x)
+                    .ticks(24)
+                    .tickFormat(d3.timeFormat("%H"))
 
                 // Add your axis
                 svg.append("g")
-                .attr("transform", "translate(5,25)")
-                .call(d3.axisBottom().scale(x).ticks(24).tickFormat(d3.timeFormat("%H")));
+                .attr("transform", "translate(0,35)")
+                .call(xAxis);
                
+                const xAxisDay = d3.axisBottom()
+                    .scale(x)
+                    .ticks(2)
+                    .tickFormat(d3.timeFormat("%d %B"))
+                
+                svg.append("g")
+                    .attr("transform", "translate(0,55)")
+                    .call(xAxisDay);
 
+                const addHours = (date, hours) => {
+                    // const date = new Date()
+                    const inc = 1000 * 60 * 60 // an hour
+                    
+
+                    const _date = new Date(date)
+                    return new Date( _date.getTime() + ( hours *inc ) )
+                    
+                }
+
+               let sunrise = addHours(startDay , 6 )
+               let sunset = addHours(startDay , 18 )
               
 
                let startTime = times.start
                let endTime = times.end
 
+               svg
+                    .append("line")
+                    .attr("x1", x(startDay))
+                    .attr("x2", x(sunrise ))
+                    .attr("y1", 0)
+                    .attr("y2", 0)
+                    .attr("stroke", "#dedede")
+                    .attr("stroke-width", 50)
+
                 svg
-                .append("line")
-                .attr("x1", x(startTime))
-                .attr("x2", x(endTime ))
-                .attr("y1", 10)
-                .attr("y2", 10)
-                .attr("stroke", "orange")
-                .attr("stroke-width", 20)
+                    .append("line")
+                    .attr("x1", x(sunset))
+                    .attr("x2", x(addHours(sunset, 12 )))
+                    .attr("y1", 0)
+                    .attr("y2", 0)
+                    .attr("stroke", "#dedede")
+                    .attr("stroke-width", 60)
+
+                    svg
+                    .append("line")
+                    .attr("x1", x(addHours(sunset, 24)))
+                    .attr("x2", x(addHours(sunset, 36 )))
+                    .attr("y1", 0)
+                    .attr("y2", 0)
+                    .attr("stroke", "#dedede")
+                    .attr("stroke-width", 60)
+
+                svg
+                    .append("line")
+                    .attr("x1", x(startTime))
+                    .attr("x2", x(endTime ))
+                    .attr("y1", 20)
+                    .attr("y2", 20)
+                    .attr("stroke", "orange")
+                    .attr("stroke-width", 10)
+                svg.append("text")
+                    .attr("x", ( x(startTime)+ x(endTime ) )/2)
+                    .attr("y" , 15)
+                    .attr("text-anchor", "middle")
+                    .text("Video Recording")
           // alert('timeline')
            }
         

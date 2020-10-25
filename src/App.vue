@@ -28,7 +28,7 @@
     <v-main>
       <!-- <HelloWorld/> -->
        <MainContent :articles="videodata.items" ></MainContent> 
-      <Calendar/>
+      <!-- <Calendar/> -->
     </v-main>
   </v-app>
 </template>
@@ -38,7 +38,7 @@
 // import axios from 'axios' // importing the axios (a HTTP library) to connects the app with the News API
 import MainContent from './components/MainContent.vue' // import the Main Content component
 import SideBar from './components/SideBar.vue' // import the SideMenu component
-import Calendar from './components/Calendar.vue'
+// import Calendar from './components/Calendar.vue'
 
 const videodata = require('./components/videodata.js')
 
@@ -47,7 +47,7 @@ export default {
   components: {
         MainContent, // Register the component
         SideBar,
-        Calendar
+        // Calendar
   },
 
   data() {

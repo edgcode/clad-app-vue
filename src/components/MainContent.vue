@@ -1,61 +1,17 @@
 <template>
  <v-container fluid  grid-list-xl>
     <v-layout row wrap align-center>
-     
-          <v-flex xs6 sm4
+        <v-flex xs12 sm8>
+          <h2>This page shows evidence of consistent waking watch non performance over a number of months from july to October</h2>
+          </v-flex>
+          <v-flex xs6 sm6
             
-                v-for="(article, i) in articles" 
+                v-for="(video, i) in articles" 
                 :key="i"
 
                 
               >
-              <v-card class="my-3" hover>
-                <!-- <v-img
-                  height="350px"
-                  v-bind:src="article.urlToImage"
-                ></v-img> -->
-                <div>
-                  <iframe width="100%" height="200" src="https://www.youtube.com/embed/0DrLCY2-fQA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-                  <v-container fill-height fluid>
-                    <v-layout>
-                      <v-flex xs12 align-end d-flex>
-                        <span class="headline">{{ article.snippet.title }}</span>
-                        <h2><span >{{ article.videoTitle }}</span></h2>
-                      </v-flex>
-                    </v-layout>
-                  </v-container>
-               
-                <v-card-text>
-                  {{ article.snippet.description }}
-                </v-card-text>
-                <TimeLine  :timelineId="i" :videoTitle = "article.snippet.title" :dates="article.dates" :times="article.times"/>
-                <v-card-actions>
-                  <v-chip small color="secondary" class="white--text">
-                    <!-- {{article.source.name}} Source Name -->
-                    Name
-                  </v-chip>
-                  <v-spacer></v-spacer>
-                  <v-btn icon class="red--text">
-                    <v-icon small>fa-reddit</v-icon>
-                  </v-btn>
-                  <v-btn icon class="light-blue--text">
-                    <v-icon small>fa-twitter</v-icon>
-                  </v-btn>
-                  <v-btn icon class="blue--text text--darken-4">
-                    <v-icon small>fa-facebook</v-icon>
-                  </v-btn>
-                  <v-btn icon class="red--text">
-                    <v-icon small>fa-google-plus</v-icon>
-                  </v-btn>
-                  <v-btn icon class="blue--text text--darken-4">
-                    <v-icon small>fa-linkedin</v-icon>
-                  </v-btn>
-                  <v-spacer></v-spacer>
-
-         <v-btn small replace color="info" href="#" target="_blank" >Read More</v-btn>
-                </v-card-actions>
-              </v-card>
+          <VideoItem :itemId="i" :video="video" />
             
           </v-flex>
          
@@ -64,7 +20,8 @@
 </template>
 
 <script>
-import TimeLine from './TimeLine.vue'
+// import TimeLine from './TimeLine.vue'
+import VideoItem from './VideoItem.vue'
 
 
 
@@ -74,7 +31,11 @@ export default {
       articles: Array
   },
   components: {
-       TimeLine
+      // TimeLine,
+       VideoItem
   },
+  methods: {
+
+  }
 }
 </script>

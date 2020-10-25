@@ -43,12 +43,14 @@ export default {
             console.log("from", from)
             console.log("to", to)
 
-            const startDay = new Date( +from[2], +from[1], +from[0], 0, 0)
-            const endDay = new Date( +to[2], +to[1], +to[0], 23, 59)
+            const startDay = new Date( +from[2], +from[1]-1, +from[0], 0, 0)
+            const endDay = new Date( +to[2], +to[1]-1, +to[0], 23, 59)
 
+            this.startDay = startDay
+            this.endDay = endDay
 
-            const startTime = new Date( +from[2], +from[1], +from[0], +from[3].slice(0,2), +from[3].slice(-2))
-            const endTime = new Date( +to[2], +to[1], +to[0], +to[3].slice(0,2), +to[3].slice(-2))
+            const startTime = new Date( +from[2], +from[1]-1, +from[0], +from[3].slice(0,2), +from[3].slice(-2))
+            const endTime = new Date( +to[2], +to[1]-1, +to[0], +to[3].slice(0,2), +to[3].slice(-2))
 
             const output = {
                 dates : {
