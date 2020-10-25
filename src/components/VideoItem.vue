@@ -37,31 +37,7 @@
                   {{ video.snippet.description }}
                 </v-card-text>
                 <TimeLine  :timelineId="itemId" :videoTitle = "video.snippet.title" />
-                <v-card-actions>
-                  <v-chip small color="secondary" class="white--text">
-                    <!-- {{article.source.name}} Source Name -->
-                    Name
-                  </v-chip>
-                  <v-spacer></v-spacer>
-                  <v-btn icon class="red--text">
-                    <v-icon small>fa-reddit</v-icon>
-                  </v-btn>
-                  <v-btn icon class="light-blue--text">
-                    <v-icon small>fa-twitter</v-icon>
-                  </v-btn>
-                  <v-btn icon class="blue--text text--darken-4">
-                    <v-icon small>fa-facebook</v-icon>
-                  </v-btn>
-                  <v-btn icon class="red--text">
-                    <v-icon small>fa-google-plus</v-icon>
-                  </v-btn>
-                  <v-btn icon class="blue--text text--darken-4">
-                    <v-icon small>fa-linkedin</v-icon>
-                  </v-btn>
-                  <v-spacer></v-spacer>
-
-         <v-btn small replace color="info" href="#" target="_blank" >Read More</v-btn>
-                </v-card-actions>
+               
               </v-card>
 </template>
 <script>
