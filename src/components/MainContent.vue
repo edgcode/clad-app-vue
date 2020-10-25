@@ -1,5 +1,7 @@
 <template>
+ <v-container fluid  grid-list-xl>
     <v-layout row wrap align-center>
+     
           <v-flex xs12 sm6
             
                 v-for="(article, i) in articles" 
@@ -55,7 +57,9 @@
               </v-card>
             
           </v-flex>
+         
         </v-layout>
+         </v-container>
 </template>
 
 <script>
