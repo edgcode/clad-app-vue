@@ -1,26 +1,28 @@
 <template>
   <v-app>
-     <v-navigation-drawer app>
-    <!-- -->
+     <!-- <v-navigation-drawer app>
+    
     <SideBar />
-  </v-navigation-drawer>
+  </v-navigation-drawer> -->
+
+
     <v-app-bar
       app
       color="primary"
       dark
     >
-   Building Safety App
+   Waking Watch Non Performance Report
       
       <v-spacer></v-spacer>
 
-      <v-btn
+      <!-- <v-btn
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
         text
       >
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      </v-btn> -->
     </v-app-bar>
 
      
@@ -46,7 +48,7 @@ export default {
 
   components: {
         MainContent, // Register the component
-        SideBar,
+       // SideBar,
         // Calendar
   },
 

@@ -34,6 +34,9 @@
                   </v-container>
                
                 <v-card-text>
+                    Patrols are supposed to pass every door every 15 minutes, 24 hours per day.
+                    In this <strong>{{recordingLength}} hour</strong> period, a patrol should pass this camera <strong>{{parseInt(recordingLength)*4}} times</strong>.
+                    Instead, the Waking Watch appear <strong>0 times</strong>
                   {{ video.snippet.description }}
                 </v-card-text>
                 <TimeLine  :timelineId="itemId" :videoTitle = "video.snippet.title" />
