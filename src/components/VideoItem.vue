@@ -19,14 +19,14 @@
                       <v-flex xs12 align-end >
                         <!-- <span class="headline">{{ video.snippet.title }}</span> -->
                         <!-- <h2><span >{{ video.videoTitle }}</span></h2> -->
-                        
+                        <h6>Timelapse Video Footage</h6>
                         <h1>{{recordingLength}} hours - no patrols</h1>
                       
                         <h5>{{startTime}} || {{endTime}} </h5>
                        
                       
 
-                        
+                        <Modal />
 
 
                       </v-flex>
@@ -45,6 +45,7 @@
 </template>
 <script>
 import TimeLine from './TimeLine.vue'
+import Modal from './Modal.vue'
 const d3 = require("d3")
 
 const utils = require('./common/utils.js')
@@ -56,7 +57,8 @@ export default {
 
     ],
     components: {
-        TimeLine
+        TimeLine,
+        Modal
     },
     data() {
         return{
